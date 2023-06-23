@@ -16,7 +16,7 @@ class TypesTableSeeder extends Seeder
      */
     public function run()
     {
-        $types = ['Html','Html Css','Hrtml Css Js','Vue Vite','Php','Laravel'];
+        $types = ['FrontEnd','Backend','FullStack','Design'];
 
         foreach ($types as $type) {
             $newType = new Type();
