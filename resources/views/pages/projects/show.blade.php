@@ -19,6 +19,14 @@ Portfolio Leonardo Rinaldi | Progetti
             <h5>{{$project->type->name}}</h5>
             <h6><i>{{$project['description']}}</i>
             </h6>
+            <div>                
+                @foreach ($project->tags as $tag)
+                <span>
+                    {{$tag->name}}
+                </span>
+                    
+                @endforeach
+            </div>
         </div>
     </div>
 </div>
