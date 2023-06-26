@@ -81,7 +81,8 @@
                 @foreach ($tags as $tag)
                 <div class="form-check">
                     <label for="project-checkbox-{{$tag->id}}" class="form-label text-white-50">{{$tag->name}}</label>
-                    <input class="form-check-input" type="checkbox" name="tags[]" value="{{$tag->id}}" id="project-checkbox-{{$tag->id}}">
+                    <input class="form-check-input" type="checkbox" name="tags[]" value="{{$tag->id}}" id="project-checkbox-{{$tag->id}}"
+                    @if(old('tags') && in_array($tag->id, old('tags'))) checked @endif>
                 </div>           
                 @endforeach
                 @error('tag')
