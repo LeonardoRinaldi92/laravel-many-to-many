@@ -67,6 +67,10 @@ class ProjectController extends Controller
  
         $new_project = new Project($form_data);
         $new_project->save();
+
+        if ($request->has('tags')){
+            $new_project->tags()->attach($request->tags);
+        }
         
         return redirect()->route('projects.index');
     }
