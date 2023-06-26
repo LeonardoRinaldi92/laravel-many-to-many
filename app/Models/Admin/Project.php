@@ -18,6 +18,7 @@ class Project extends Model
         'relase_date',
         'type_id',
         'visibility',
+        'tag',
     ];
 
         /**

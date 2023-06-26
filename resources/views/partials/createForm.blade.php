@@ -53,7 +53,7 @@
             </div>
 
 
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label for="project-type_id" class="form-label text-white-50">type</label>
                 <select required name="type_id" id="type_id">
                     <option value="">scegli un tipo</option>
@@ -66,12 +66,27 @@
                 @enderror
             </div>
 
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label for="project-visibility" class="form-label text-white-50">visibilità</label>
                 <div>
                     <input type="radio" name="visibility" value="0" ><span class="text-white-50">privato</span>
                     <input type="radio" name="visibility" value="1" checked="checked"> <span class="text-white-50">publico</span>
                 </div>
+            </div>
+            @error('visbility')
+                <span style="color: red; text-transform: uppercase">{{$message}}</span>
+            @enderror
+
+            <div class="form-group mt-3">
+                @foreach ($tags as $tag)
+                <div class="form-check">
+                    <label for="project-checkbox-{{$tag->id}}" class="form-label text-white-50">{{$tag->name}}</label>
+                    <input class="form-check-input" type="checkbox" name="tags[]" value="{{$tag->id}}" id="project-checkbox-{{$tag->id}}">
+                </div>           
+                @endforeach
+                @error('tag')
+                <span style="color: red; text-transform: uppercase">{{$message}}</span>
+            @enderror
             </div>
             <button type="submit" class="my-3 btn btn-primary">Aggiungi progetto </button>
         </form>

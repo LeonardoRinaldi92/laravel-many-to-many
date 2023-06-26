@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 
 use App\Models\Admin\Project;
 use App\Models\Admin\Type;
+use App\Models\Admin\Tag;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -41,7 +42,8 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('pages.admin.projects.create', compact('types'));
+        $tags = Tag::all();
+        return view('pages.admin.projects.create', compact('types','tags'));
     }
 
     /**
