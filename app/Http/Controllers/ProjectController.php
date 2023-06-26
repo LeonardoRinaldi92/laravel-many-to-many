@@ -111,8 +111,9 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
+        $tags = Tag::all();
 
-        return view('pages.admin.projects.edit',compact('project','types'));
+        return view('pages.admin.projects.edit',compact('project','types','tags'));
     }
 
     /**
@@ -137,6 +138,10 @@ class ProjectController extends Controller
         $form_data['slug'] = Str::slug($request->name);
 
         $project->update($form_data);
+
+        if ($request->has('tags')){
+            $project->tags()->sync($request->tags);
+        }
         
         return redirect()->route('projects.show', $project)->with('success', "hai modificato l'elemento".$project['name']);
     }

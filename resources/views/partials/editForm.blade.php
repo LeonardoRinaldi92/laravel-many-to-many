@@ -9,6 +9,7 @@
             @csrf
             @method('PUT')
 
+
             <div class="form-group">
                 <label for="project-name" class="form-label">Titolo</label>
                 <input type="text" required max="255"  id="project-name" class="form-control"
@@ -73,6 +74,24 @@
                     <input type="radio" name="visibility" value="1" checked="{{ old('visibility',$project->visibility) == 1 ? ' checked' : ''}}"><span class="text-white-50">publico</span>
                 </div>
             </div>
+
+            <div class="form-group mt-3">
+                @foreach ($tags as $tag)
+                <div class="form-check">
+                    <label for="project-checkbox-{{$tag->id}}" class="form-label text-white-50">{{$tag->name}}</label>
+                    <input class="form-check-input" type="checkbox" name="tags[]" value="{{$tag->id}}" id="project-checkbox-{{$tag->id}}"
+                    @if ($errors->any())
+                    @if(old('tags') && in_array($tag->id, old('tags'))) checked @endif
+                    @else
+                    {{ $project->tags->contains($tag) ? 'checked' : '' }}    
+                    @endif>
+                </div>           
+                @endforeach
+                @error('tags')
+                <span style="color: red; text-transform: uppercase">{{$message}}</span>
+                @enderror
+            </div>
+
             <button type="submit" class="my-3 btn btn-primary">Modifica Proggetto </button>
         </form>
     </div>
