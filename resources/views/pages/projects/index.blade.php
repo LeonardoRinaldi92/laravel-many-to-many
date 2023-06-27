@@ -19,7 +19,7 @@ Portfolio Leonardo Rinaldi | Progetti
     <div class="row">
         @forelse ($projects as $project)
         <div class="col-4 p-3 mt-3">
-            <div class="card text-center p-3" style="min-height:550px">
+            <div class="card text-center p-3" style="min-height:600px">
                 <div class="text-end">
                     @foreach ($project->tags as $tag)
                     <span class="badge {{$tag->slug}}">
