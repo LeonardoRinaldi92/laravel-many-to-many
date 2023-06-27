@@ -15,11 +15,10 @@ Portfolio Leonardo Rinaldi | Progetti
         <div class="card col-8 text-center p-5 mb-5">
             <div>
                 <div class="d-flex justify-content-between">
-                    <span class="badge badge-type">{{$project->type->name}}</span>
+                    <span class="badge badge-type" style="height:25px">{{$project->type->name}}</span>
                     <div>
                         @foreach ($project->tags as $tag)
                         <span class="badge {{$tag->slug}}">
-                            {{$tag->name}}
                         </span>
                         @endforeach
                     </div>

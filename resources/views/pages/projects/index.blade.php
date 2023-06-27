@@ -23,7 +23,6 @@ Portfolio Leonardo Rinaldi | Progetti
                 <div class="text-end">
                     @foreach ($project->tags as $tag)
                     <span class="badge {{$tag->slug}}">
-                        {{$tag->name}}
                     </span>
                     @endforeach
                 </div>
