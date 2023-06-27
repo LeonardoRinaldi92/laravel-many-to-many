@@ -23,7 +23,7 @@ class ProjectsTableSeeder extends Seeder
             $newProject->slug = Str::slug($newProject->name);
             $newProject->description = $faker->sentence(40);
             $newProject->short_description = $faker->sentence(10);
-            $newProject->image = 'https://picsum.photos/200/300?random='.$i;
+            $newProject->image = '';
             $newProject->relase_date = $faker->dateTimeBetween('-20 week', '+20 week');
             $newProject->type_id= $faker->numberBetween(1, 4);
             $newProject->visibility = true;

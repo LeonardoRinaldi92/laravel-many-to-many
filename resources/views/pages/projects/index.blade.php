@@ -19,12 +19,24 @@ Portfolio Leonardo Rinaldi | Progetti
     <div class="row">
         @forelse ($projects as $project)
         <div class="col-4 p-3 mt-3">
-            <div class="card text-center p-2">
+            <div class="card text-center p-3" style="min-height:550px">
+                <div class="text-end">
+                    @foreach ($project->tags as $tag)
+                    <span class="badge {{$tag->slug}}">
+                        {{$tag->name}}
+                    </span>
+                    @endforeach
+                </div>
                 <a href="{{route('projects.show', $project)}}" class="text-decoration-none text-dark">
-                    <h3>{{$project['name']}}
+                    <h3 class="my-3 title">{{$project['name']}}
                     </h3>
-                    <img class="w-100" src="{{asset('storage/'. $project['image'])}}" alt="" >
-                    <h6><i>{{$project['short_description']}}</i>
+                    @if ($project['image'] == '')
+                        <img class="w-100" src="{{ asset('storage\projects_images\icon-image-not-found-free-vector.jpg') }}" alt="">
+                    @else
+                        <img class="w-100" src="{{ asset('storage/' . $project['image']) }}" alt="">
+                    @endif
+                    <h6 class="short-desc mt-4">
+                        <i>{{$project['short_description']}}</i>
                     </h6>
                 </a>
             </div>

@@ -12,21 +12,31 @@ Portfolio Leonardo Rinaldi | Progetti
 @endif
 <div class="container">
     <div class="row justify-content-center">
-        <div class="card col-8 text-center p-5">
-            <h3>{{$project['name']}}, <i>{{$project['relase_date']}}</i>
-            </h3>
-                <img src="{{asset('storage/'. $project->image)}}" alt="">
-            <h5>{{$project->type->name}}</h5>
-            <h6><i>{{$project['description']}}</i>
-            </h6>
-            <div>                
-                @foreach ($project->tags as $tag)
-                <span>
-                    {{$tag->name}}
-                </span>
-                    
-                @endforeach
+        <div class="card col-8 text-center p-5 mb-5">
+            <div>
+                <div class="d-flex justify-content-between">
+                    <span class="badge badge-type">{{$project->type->name}}</span>
+                    <div>
+                        @foreach ($project->tags as $tag)
+                        <span class="badge {{$tag->slug}}">
+                            {{$tag->name}}
+                        </span>
+                        @endforeach
+                    </div>
+                </div>                
             </div>
+            <h3>{{$project['name']}}</h3>
+            <h6 class="mb-4">
+                <i>{{$project['relase_date']}}</i>
+            </h6>
+            @if ($project['image'] == '')
+                <img  src="{{ asset('storage\projects_images\icon-image-not-found-free-vector.jpg') }}" alt="">
+            @else
+                <img class="w-100" src="{{ asset('storage/' . $project['image']) }}" alt="">
+            @endif
+            <p class="mt-4">
+                <i>{{$project['description']}}</i>
+            </p>
         </div>
     </div>
 </div>

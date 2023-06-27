@@ -87,7 +87,7 @@
                 @endforeach
                 @error('tag')
                 <span style="color: red; text-transform: uppercase">{{$message}}</span>
-            @enderror
+                @enderror
             </div>
             <button type="submit" class="my-3 btn btn-primary">Aggiungi progetto </button>
         </form>

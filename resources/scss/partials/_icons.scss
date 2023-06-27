@@ -1,0 +1,59 @@
+.html {
+    background-color: rgb(242,82,32)
+}
+
+.css {
+    background-color: rgb(53,146,203);
+}
+
+.php {
+    background-color: rgb(113,117,170);
+    color: white;
+    -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.582);
+}
+
+.laravel {
+    color: rgb(231,75,66);
+    border: 1px solid rgb(231,75,66);
+}
+
+.js {
+    background-color: rgb(242,212,1);
+    color: black;
+    border: 1px solid black;
+}
+
+.vuevit {
+    background-color: rgb(60,129,110);
+    color:rgb(89, 231, 167);
+     -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.774);
+}
+
+ .badge-type {
+    color: white;
+    border: 1px solid white;
+ }
+
+.card {
+    background-color: $blue;
+
+}
+h1,h2,h3,h4,h5,h6,i {
+    color: white;
+}
+
+.card:hover .title {
+    color: $pink;
+
+}
+
+.card:hover .short-desc {
+    color: $pink;
+}
+
+#select-type {
+    background-color: $dark-blue;
+    border: 0.2px solid $pink;
+    color: $pink;
+    cursor: pointer;
+}
