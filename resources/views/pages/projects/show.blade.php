@@ -24,7 +24,7 @@ Portfolio Leonardo Rinaldi | Progetti
                     </div>
                 </div>                
             </div>
-            <h3>{{$project['name']}}</h3>
+            <h3 class="mt-3">{{$project['name']}}</h3>
             <h6 class="mb-4">
                 <i>{{$project['relase_date']}}</i>
             </h6>
