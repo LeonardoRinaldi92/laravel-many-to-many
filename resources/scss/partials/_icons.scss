@@ -1,6 +1,7 @@
 .html {
     height: 40px;
     width: 40px;
+    margin-right:5px;
     &::after {
         content: "";
         display: inline-block;
@@ -14,6 +15,7 @@
 .css {
     height: 40px;
     width: 40px;
+    margin-right:5px;
     &::after {
         content: "";
         display: inline-block;
@@ -27,6 +29,7 @@
 .php {
     height: 40px;
     width: 40px;
+    margin-right:5px;
     &::after {
         content: "";
         display: inline-block;
@@ -40,6 +43,7 @@
 .laravel {
     height: 40px;
     width: 40px;
+    margin-right:5px;
     &::after {
         content: "";
         display: inline-block;
@@ -54,6 +58,7 @@
 .js {
     height: 40px;
     width: 40px;
+    margin-right:5px;
     &::after {
         content: "";
         display: inline-block;
@@ -67,6 +72,7 @@
 .vuevit {
     height: 40px;
     width: 40px;
+    margin-right:5px;
     &::after {
         content: "";
         display: inline-block;
@@ -86,17 +92,15 @@
     background-color: $blue;
 
 }
-h1,h2,h3,h4,h5,h6,i {
-    color: white;
-}
+
 
 .card:hover .title {
-    color: $pink;
+    color: $pink!important;
 
 }
 
 .card:hover .short-desc {
-    color: $pink;
+    color: $pink!important;
 }
 
 #select-type {
@@ -104,4 +108,8 @@ h1,h2,h3,h4,h5,h6,i {
     border: 0.2px solid $pink;
     color: $pink;
     cursor: pointer;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: white;
 }
